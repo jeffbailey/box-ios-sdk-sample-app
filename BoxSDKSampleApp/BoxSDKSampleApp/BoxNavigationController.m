@@ -86,8 +86,7 @@
         [self popToRootViewControllerAnimated:YES];
 
         NSURL *authorizationURL = [BoxSDK sharedSDK].OAuth2Session.authorizeURL;
-        NSString *redirectURI = [BoxSDK sharedSDK].OAuth2Session.redirectURIString;
-        BoxAuthorizationViewController *authorizationViewController = [[BoxAuthorizationViewController alloc] initWithAuthorizationURL:authorizationURL redirectURI:redirectURI];
+        BoxAuthorizationViewController *authorizationViewController = [[BoxAuthorizationViewController alloc] initWithAuthorizationURL:authorizationURL redirectURI:nil];
         BoxAuthorizationNavigationController *loginNavigation = [[BoxAuthorizationNavigationController alloc] initWithRootViewController:authorizationViewController];
         authorizationViewController.delegate = loginNavigation;
         loginNavigation.modalPresentationStyle = UIModalPresentationFormSheet;

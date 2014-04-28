@@ -26,7 +26,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Setup BoxSDK
-#error Set your client ID and client secret in the BoxSDK
+#error Step1: Set your client ID and client secret in the BoxSDK
+#error Step2: Update the URL Scheme for the target using your clientID
     [BoxSDK sharedSDK].OAuth2Session.clientID = @"YOUR_CLIENT_ID";
     [BoxSDK sharedSDK].OAuth2Session.clientSecret = @"YOUR_CLIENT_SECRET";
 
@@ -49,6 +50,21 @@
     }
 
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString*)sourceApplication
+         annotation:(id)annotation
+{
+    if ([url.scheme isEqualToString:@"boxsdk-REPLACE_WITH_YOUR_CLIENT_ID"]) {
+        NSLog(@"ERROR: Update the Target URL scheme with your Box client id");
+    } else if ([url.scheme hasPrefix:@"boxsdk"]) {
+        [[BoxSDK sharedSDK].OAuth2Session performAuthorizationCodeGrantWithReceivedURL:url];
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)boxAPITokensDidRefresh:(NSNotification *)notification

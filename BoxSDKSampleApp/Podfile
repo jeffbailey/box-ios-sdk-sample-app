@@ -1,0 +1,10 @@
+platform :ios, '7.0'
+
+
+
+# NOTE: the ~> syntax picks up point releases
+
+pod 'box-ios-sdk-v2', '~> 1.2'
+
+
+

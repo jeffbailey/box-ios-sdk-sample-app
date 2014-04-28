@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58BBE493712343918066980E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA0B8AD9FA2446997010832 /* libPods.a */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -23,7 +24,6 @@
 		E4FADA69172CFF290052AD11 /* BoxPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FADA62172CFF290052AD11 /* BoxPreviewViewController.m */; };
 		E4FADA6A172CFF290052AD11 /* BoxTrashFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FADA64172CFF290052AD11 /* BoxTrashFolderViewController.m */; };
 		E4FADA6B172CFF290052AD11 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FADA66172CFF290052AD11 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E4FADA77172D052C0052AD11 /* libBoxSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA72172D04A50052AD11 /* libBoxSDK.a */; };
 		E4FADA79172D055F0052AD11 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA78172D055F0052AD11 /* Security.framework */; };
 		E4FADA7D172D07070052AD11 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA7C172D07070052AD11 /* MobileCoreServices.framework */; };
 		E4FADA83172D084B0052AD11 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4FADA7F172D084B0052AD11 /* MainStoryboard_iPad.storyboard */; };
@@ -63,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DA0B8AD9FA2446997010832 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		657DF12D787E4DB6A8A8E16B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
@@ -103,12 +105,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */,
-				E4FADA77172D052C0052AD11 /* libBoxSDK.a in Frameworks */,
 				E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */,
 				E4FADA43172CFE480052AD11 /* Foundation.framework in Frameworks */,
 				E4FADA45172CFE480052AD11 /* CoreGraphics.framework in Frameworks */,
 				E4FADA7D172D07070052AD11 /* MobileCoreServices.framework in Frameworks */,
 				E4FADA79172D055F0052AD11 /* Security.framework in Frameworks */,
+				58BBE493712343918066980E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +124,7 @@
 				E4FADA46172CFE480052AD11 /* BoxSDKSampleApp */,
 				E4FADA3F172CFE480052AD11 /* Frameworks */,
 				E4FADA3E172CFE480052AD11 /* Products */,
+				657DF12D787E4DB6A8A8E16B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +145,7 @@
 				E4FADA42172CFE480052AD11 /* Foundation.framework */,
 				E4FADA44172CFE480052AD11 /* CoreGraphics.framework */,
 				C5FAFD311760286600636C39 /* QuartzCore.framework */,
+				0DA0B8AD9FA2446997010832 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4FADA5A172CFE480052AD11 /* Build configuration list for PBXNativeTarget "BoxSDKSampleApp" */;
 			buildPhases = (
+				CA01F61AE44E47B0AAD9E15B /* Check Pods Manifest.lock */,
 				E4FADA39172CFE480052AD11 /* Sources */,
 				E4FADA3A172CFE480052AD11 /* Frameworks */,
 				E4FADA3B172CFE480052AD11 /* Resources */,
+				142D852043624365BF7E9087 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +303,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		142D852043624365BF7E9087 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA01F61AE44E47B0AAD9E15B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4FADA39172CFE480052AD11 /* Sources */ = {
@@ -412,6 +451,7 @@
 		};
 		E4FADA5B172CFE480052AD11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 657DF12D787E4DB6A8A8E16B /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -426,6 +466,7 @@
 		};
 		E4FADA5C172CFE480052AD11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 657DF12D787E4DB6A8A8E16B /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
